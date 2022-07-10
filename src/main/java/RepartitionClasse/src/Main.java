@@ -17,8 +17,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Main{
   public static void main(String[] args) throws IOException {
+		// 	final String excelFilePathRead ="C:/Users/ADMIN/Desktop/WS_Eclipse/RepartitionClasseIntelliJ/Classeur1.xlsx";
+		//  final String excelFilePathWrite = "C:/Users/ADMIN/Desktop/listeClasse.xlsx";
+		final String excelFilePathRead = "A:/PROJET IRL/RepartitionClasse/Classeur1.xlsx";
+		final String excelFilePathWrite = "A:/PROJET IRL/RepartitionClasse/LiseClasse.xlsx";
 
-		final String excelFilePath = "C:/Users/ADMIN/Desktop/WS_Eclipse/RepartitionClasseIntelliJ/Classeur1.xlsx";
 		HashMap<String, Integer> mapPrenomNomToId = new HashMap<>();
 		HashMap<Integer, Etudiant> mapIdToEtudiant = new HashMap<>();
 
@@ -30,7 +33,7 @@ public class Main{
 
 	  TreeSet <Etudiant> listeCompleteEtudiant = new TreeSet<>();
 	 
-	  FileInputStream excelFile = new FileInputStream(excelFilePath);
+	  FileInputStream excelFile = new FileInputStream(excelFilePathRead);
 	  Workbook workbook = new XSSFWorkbook(excelFile);
 
 	  //R�cup�ration de la premi�re feuille de calcul du document
@@ -171,7 +174,7 @@ public class Main{
 		//valide les changements et les note dans un nouveau excel
 		try {
 			//Write the workbook in file system
-			FileOutputStream out = new FileOutputStream("C:/Users/ADMIN/Desktop/listeClasse.xlsx");
+			FileOutputStream out = new FileOutputStream(excelFilePathWrite);
 			workbook.write(out);
 			out.close();
 			System.out.println("listeClasse.xlsx written successfully on disk.");
