@@ -18,7 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class Main{
   public static void main(String[] args) throws IOException {
 
-		final String excelFilePath = "C:/Users/ADMIN/Desktop/Classeur1.xlsx";
+		final String excelFilePath = "C:/Users/ADMIN/Desktop/WS_Eclipse/RepartitionClasseIntelliJ/Classeur1.xlsx";
 		HashMap<String, Integer> mapPrenomNomToId = new HashMap<>();
 		HashMap<Integer, Etudiant> mapIdToEtudiant = new HashMap<>();
 
@@ -109,7 +109,6 @@ public class Main{
 		Classe classe2 = new Classe(numClasse, NombrePersonneParClasse);
 
 		listeCompleteEtudiant = classe2.faireClasse(listeCompleteEtudiant);
-		//classe1.afficherListeEtudiant();
 
 		System.out.println("taille liste complete : " + listeCompleteEtudiant.size());
 		System.out.println("nbr masc: " + classe2.getNbrMasc());
